@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      auto-offset-reset: earliest
+      group-id: process.group
+kafka:
+  topic:
+    process:
+      request: process.request
+      reply: process.reply
+  reply-timeout:
+    days: 1
+resources:
+  url-joke: http://api.icndb.com/jokes/random
