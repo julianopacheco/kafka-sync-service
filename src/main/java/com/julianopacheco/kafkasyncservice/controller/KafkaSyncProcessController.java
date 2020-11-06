@@ -22,7 +22,7 @@ import com.julianopacheco.kafkasyncservice.model.Process;
 @RestController
 public class KafkaSyncProcessController {
 	
-	@Autowired
+	@Autowired(required =  true)
 	ReplyingKafkaTemplate<String, Process, Process> kafkaTemplate;
 
 	@Value("${kafka.topic.process.request}")

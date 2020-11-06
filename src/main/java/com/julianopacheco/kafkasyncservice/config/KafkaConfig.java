@@ -34,7 +34,7 @@ public class KafkaConfig {
 	@Value("${spring.kafka.consumer.group-id}")
 	private String consumerGroup;
 
-	@Value("${kafka.topic.processo.reply}")
+	@Value("${kafka.topic.process.reply}")
 	private String replyTopic;
 
 	@Value("${kafka.reply-timeout.days}")
