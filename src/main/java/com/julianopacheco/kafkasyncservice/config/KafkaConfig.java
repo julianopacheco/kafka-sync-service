@@ -25,6 +25,8 @@ import org.springframework.kafka.requestreply.ReplyingKafkaTemplate;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
+import com.julianopacheco.kafkasyncservice.model.Process;
+
 @Configuration
 public class KafkaConfig {
 

@@ -22,7 +22,7 @@ import com.julianopacheco.kafkasyncservice.model.Process;
 @RestController
 public class KafkaSyncProcessController {
 	
-	@Autowired(required =  true)
+	@Autowired
 	ReplyingKafkaTemplate<String, Process, Process> kafkaTemplate;
 
 	@Value("${kafka.topic.process.request}")
@@ -33,8 +33,8 @@ public class KafkaSyncProcessController {
 	
 	@ResponseBody
 	@PostMapping(value = "/process", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Process classifier(@RequestBody Process processo) throws InterruptedException, ExecutionException, TimeoutException {
-		ProducerRecord<String, Process> record = new ProducerRecord<String, Process>(requestTopic, processo);
+	public Process classifier(@RequestBody Process process) throws InterruptedException, ExecutionException, TimeoutException {
+		ProducerRecord<String, Process> record = new ProducerRecord<String, Process>(requestTopic, process);
 		
 		record.headers().add(new RecordHeader(KafkaHeaders.REPLY_TOPIC, requestReplyTopic.getBytes()));
 		

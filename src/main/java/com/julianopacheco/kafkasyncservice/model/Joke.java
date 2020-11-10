@@ -1,5 +1,5 @@
 package com.julianopacheco.kafkasyncservice.model;
 
-public class Joke extends Model  {
+public class Joke extends Model {
 
 }

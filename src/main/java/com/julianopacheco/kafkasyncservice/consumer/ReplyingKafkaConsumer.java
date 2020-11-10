@@ -27,7 +27,8 @@ public class ReplyingKafkaConsumer {
 	@SendTo
 	public Process listen(Process process) throws InterruptedException {
 		
-		logger.info("entrou no ReplyingKafkaConsumer " + process.getAdditionalProperties().get("id"));
+		logger.info("entrada no ReplyingKafkaConsumer " + process);
+		logger.info("###########################");
 		
 		Joke joke = getJoke();
 		process.getAdditionalProperties().put("joke", joke);
@@ -35,7 +36,8 @@ public class ReplyingKafkaConsumer {
 		// simula um delay na resposta
 		Thread.sleep(2000);
 		
-		logger.info("vai sair do ReplyingKafkaConsumer " + process.getAdditionalProperties().get("numeroProcesso"));
+		logger.info("###########################");
+		logger.info("retorno no ReplyingKafkaConsumer " + process);
 		return process;
 	}
 
